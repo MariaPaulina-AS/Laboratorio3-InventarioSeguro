@@ -24,11 +24,10 @@ fun main(){
     stockQuantity -= itemsSold //Actualización de variable mutable
 
     // 5. Generación de Reporte con Plantilla de Cadena
-    val report = """ --- REPORTE DE INVENTARIO --- 
+        val report = """ --- REPORTE DE INVENTARIO --- 
     ID: $productId | Nombre: $productName 
     Precio Final: $${String.format("%.2f", totalPriceWithTax)} 
     Stock Actual: $stockQuantity 
     Estado: ${if (stockQuantity > 10) "Suficiente" else "Crítico"} ----------------------------- 
     """.trimIndent()
-        println(report)
 }
