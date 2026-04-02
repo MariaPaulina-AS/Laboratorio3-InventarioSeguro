@@ -30,4 +30,15 @@ fun main(){
     Stock Actual: $stockQuantity 
     Estado: ${if (stockQuantity > 10) "Suficiente" else "Crítico"} ----------------------------- 
     """.trimIndent()
+
+    println(report)
+
+    //6. Desafío: Validación de entrada de usuario
+    //val inputUsuario: String? = "650.50"   Prueba 1 de Desafio//
+    val inputUsuario: String? = "No quiero pagar" //Prueba 2 de Desafio
+    val nuevoPrecio = inputUsuario?.toDoubleOrNull() ?: 0.0   //Conversion
+    val nuevoTotal = nuevoPrecio * (1 + TAX_RATE)  //Precio recalculado con IVA
+
+    println("Precio ingresado: $inputUsuario")
+    println("Nuevo precio con IVA: $${String.format("%.2f", nuevoTotal)}")
 }
